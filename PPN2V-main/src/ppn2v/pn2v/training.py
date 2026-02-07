@@ -16,7 +16,7 @@ def getStratifiedCoords2D(numPix, shape):
     '''
     Produce a list of approx. 'numPix' random coordinate, sampled from 'shape' using startified sampling.
     '''
-    box_size = np.round(np.sqrt(shape[0] * shape[1] / numPix)).astype(np.int)
+    box_size = np.round(np.sqrt(shape[0] * shape[1] / numPix)).astype(int)
     coords = []
     box_count_y = int(np.ceil(shape[0] / box_size))
     box_count_x = int(np.ceil(shape[1] / box_size))
@@ -340,7 +340,7 @@ def trainNetwork(net, trainData, valData, noiseModel, postfix, device,
     net.to(device)
     
     optimizer = optim.Adam(net.parameters(), lr=learningRate)
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.5, verbose=True)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=10, factor=0.5)
 
     running_loss = 0.0
     stepCounter=0
