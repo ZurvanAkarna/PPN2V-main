@@ -41,5 +41,8 @@ dependencies = [
 
 
 [project.urls]
-homepage = "https://github.com/juglab/PPN2V.git"
-repository = "https://github.com/juglab/PPN2V.git"
+homepage = "https://github.com/ZurvanAkarna/PPN2V-main"
+repository = "https://github.com/ZurvanAkarna/PPN2V-main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ppn2v"]
